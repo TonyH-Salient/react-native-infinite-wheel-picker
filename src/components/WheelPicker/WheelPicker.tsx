@@ -54,7 +54,6 @@ const WheelPicker = forwardRef<WheelPickerRef, WheelPickerProps>(
       onScrollListener,
       handleMomentumScrollEnd,
       offsets,
-      initialScrollIndex,
     } = useWheelPicker({
       loopCount,
       onChangeValue,
@@ -127,7 +126,6 @@ const WheelPicker = forwardRef<WheelPickerRef, WheelPickerProps>(
           renderItem={renderItem}
           snapToOffsets={offsets}
           decelerationRate={decelerationRate}
-          initialScrollIndex={initialScrollIndex}
           getItemLayout={(_data, index) => ({
             length: elementHeight,
             offset: elementHeight * index,
