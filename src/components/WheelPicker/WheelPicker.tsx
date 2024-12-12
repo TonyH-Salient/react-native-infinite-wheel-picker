@@ -70,7 +70,7 @@ const WheelPicker = forwardRef<WheelPickerRef, WheelPickerProps>(
       scrollToIndex: (index: number) => {
         flatListRef.current?.scrollToIndex({
           index,
-          animated: true,
+          animated: false,
         });
         const originalValue = data[index];
         onChangeValue(index ?? 0, originalValue?.toString() ?? '');
