@@ -54,7 +54,6 @@ const WheelPicker = forwardRef<WheelPickerRef, WheelPickerProps>(
       onScrollListener,
       handleMomentumScrollEnd,
       offsets,
-      initialScrollIndex,
     } = useWheelPicker({
       loopCount,
       onChangeValue,
@@ -71,7 +70,7 @@ const WheelPicker = forwardRef<WheelPickerRef, WheelPickerProps>(
       scrollToIndex: (index: number) => {
         flatListRef.current?.scrollToIndex({
           index,
-          animated: true,
+          animated: false,
         });
         const originalValue = data[index];
         onChangeValue(index ?? 0, originalValue?.toString() ?? '');
@@ -127,7 +126,6 @@ const WheelPicker = forwardRef<WheelPickerRef, WheelPickerProps>(
           renderItem={renderItem}
           snapToOffsets={offsets}
           decelerationRate={decelerationRate}
-          initialScrollIndex={initialScrollIndex}
           getItemLayout={(_data, index) => ({
             length: elementHeight,
             offset: elementHeight * index,
